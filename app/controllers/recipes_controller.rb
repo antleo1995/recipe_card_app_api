@@ -5,7 +5,6 @@ class RecipesController < OpenReadController
   def index
     render json: current_user.recipes
     # @recipes = Recipe.all
-
     # render json: @recipes
   end
 
