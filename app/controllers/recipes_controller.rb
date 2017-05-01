@@ -48,6 +48,6 @@ class RecipesController < OpenReadController
     # Only allow a trusted parameter "white list" through.
   def recipe_params
     params.require(:recipe).permit(:title, :ingredient_list, :directions,
-                                   :prep_time)
+                                   :prep_time, :user_id)
   end
 end
