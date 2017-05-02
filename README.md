@@ -462,13 +462,15 @@ heroku run rake db:migrate db:seed db:examples
 
 ## Production info for api
 
-Production URL: https://recipe-card-backend.herokuapp.com/
-Repo: https://github.com/antleo1995/recipe_card_app_api
+Production URL:https://recipe-card-backend.herokuapp.com/
+
+Repo:https://github.com/antleo1995/recipe_card_app_api
 
 ## Production info for client
 
-Production URL: https://antleo1995.github.io/recipe_card_app/
-Repo: https://github.com/antleo1995/recipe_card_app
+Production URL:https://antleo1995.github.io/recipe_card_app/
+
+Repo:https://github.com/antleo1995/recipe_card_app
 
 ## [License](LICENSE)
 
