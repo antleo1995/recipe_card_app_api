@@ -274,7 +274,110 @@ Content-Type: application/json; charset=utf-8
   }
 }
 ```
+### Recipes
 
+| Verb   | URI Pattern            | Controller#Action |
+|--------|------------------------|-------------------|
+| POST   | `/recipes`             | `create`          |
+| GET    | `/recipes    `         | `index`           |
+| GET    | `/recipes/:id`         | `show`            |
+| DELETE | `/recipes/:id`         | `destroy`         |
+
+### Post /recipes
+
+Request:
+
+```sh
+curl --include --request POST http://localhost:4741/recipes \
+  --header "Content-Type: application/json" \
+  --header "Authorization: Token token=$TOKEN"
+  --data '{
+    "recipe": {
+      "title": "Some recipe",
+      "ingredient_list": "some ingredients",
+      "directions": "cook it",
+      "prep_time": "too long"
+    }
+  }'
+```
+
+```sh
+ID=2 TOKEN=BAhJIiVlZDIwZTMzMzQzODg5NTBmYjZlNjRlZDZlNzYxYzU2ZAY6BkVG--7e7f77f974edcf5e4887b56918f34cd9fe293b9f scripts/user.sh
+```
+
+Response:
+
+```md
+Completed 201 Created
+Content-Type: application/json; charset=utf-8
+
+{
+  "recipe": {
+  "directions": "Made it",
+  "id": "50",
+  "ingredient_list": "Things and stuff",
+  "prep_time": "quick",
+  "title": "Next recipe"
+  }
+}
+```
+### GET /recipes
+
+Request:
+
+```sh
+curl --include --request GET http://localhost:4741/recipes\
+  --header "Authorization: Token token=$TOKEN"
+```
+
+```sh
+ID=2 TOKEN=BAhJIiVlZDIwZTMzMzQzODg5NTBmYjZlNjRlZDZlNzYxYzU2ZAY6BkVG--7e7f77f974edcf5e4887b56918f34cd9fe293b9f scripts/user.sh
+```
+
+Response:
+
+```md
+Completed 200 OK
+Content-Type: application/json; charset=utf-8
+
+{
+  "recipes": {
+  "directions": "Made it",
+  "id": "50",
+  "ingredient_list": "Things and stuff",
+  "prep_time": "quick",
+  "title": "Next recipe"
+  },
+  {
+  "directions": "Make it make it real good",
+  "id": "51",
+  "ingredient_list": "Things and stuff",
+  "prep_time": "not quick",
+  "title": "My recipe"
+  }
+}
+```
+### GET /recipe/:id
+
+Request:
+
+```sh
+curl --include --request GET http://localhost:4741/recipes/$ID\
+  --header "Authorization: Token token=$TOKEN"\
+```
+
+```sh
+ID=2 TOKEN=BAhJIiVlZDIwZTMzMzQzODg5NTBmYjZlNjRlZDZlNzYxYzU2ZAY6BkVG--7e7f77f974edcf5e4887b56918f34cd9fe293b9f scripts/user.sh
+```
+
+Response:
+
+```md
+Completed 200 OK
+Content-Type: application/json; charset=utf-8
+
+Header empty
+```
 ### Reset Database without dropping
 
 This is not a task developers should run often, but it is sometimes necessary.
