@@ -281,6 +281,7 @@ Content-Type: application/json; charset=utf-8
 | POST   | `/recipes`             | `create`          |
 | GET    | `/recipes    `         | `index`           |
 | GET    | `/recipes/:id`         | `show`            |
+| PATCH  | `/recipes/:id`         | `update`          |
 | DELETE | `/recipes/:id`         | `destroy`         |
 
 ### Post /recipes
@@ -376,7 +377,70 @@ Response:
 Completed 200 OK
 Content-Type: application/json; charset=utf-8
 
-Header empty
+{
+  "recipes": {
+  "directions": "Made it",
+  "id": "50",
+  "ingredient_list": "Things and stuff",
+  "prep_time": "quick",
+  "title": "Next recipe"
+  }
+}
+```
+### PATCH /recipe/:id
+
+Request:
+
+```sh
+curl --include --request PATCH http://localhost:4741/recipes/$ID\
+  --header "Authorization: Token token=$TOKEN"\
+  --data '{
+    "recipe": {
+      "directions": "cook it, cook it real good"
+    }
+  }'
+```
+
+```sh
+ID=2 TOKEN=BAhJIiVlZDIwZTMzMzQzODg5NTBmYjZlNjRlZDZlNzYxYzU2ZAY6BkVG--7e7f77f974edcf5e4887b56918f34cd9fe293b9f scripts/user.sh
+```
+
+Response:
+
+```md
+Completed 200 OK
+Content-Type: application/json; charset=utf-8
+
+{
+  "recipes": {
+  "directions": "cook it, cook it real good",
+  "id": "50",
+  "ingredient_list": "Things and stuff",
+  "prep_time": "quick",
+  "title": "Next recipe"
+  }
+}
+```
+### DELETE /recipe/:id
+
+Request:
+
+```sh
+curl --include --request PATCH http://localhost:4741/recipes/$ID\
+  --header "Authorization: Token token=$TOKEN"\
+```
+
+```sh
+ID=2 TOKEN=BAhJIiVlZDIwZTMzMzQzODg5NTBmYjZlNjRlZDZlNzYxYzU2ZAY6BkVG--7e7f77f974edcf5e4887b56918f34cd9fe293b9f scripts/user.sh
+```
+
+Response:
+
+```md
+Completed 200 OK
+Content-Type: application/json; charset=utf-8
+
+header empty
 ```
 ### Reset Database without dropping
 
