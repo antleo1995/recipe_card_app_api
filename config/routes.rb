@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post '/sign-in' => 'users#signin'
   delete '/sign-out/:id' => 'users#signout'
   patch '/change-password/:id' => 'users#changepw'
+  get '/allrecipes' => 'recipes#showall'
   resources :users, only: [:index, :show]
   resources :examples, except: [:new, :edit]
   resources :recipes, except: [:new, :edit]
