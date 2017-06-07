@@ -16,7 +16,8 @@ class RecipesController < OpenReadController
 
   # GET /recipes/1
   def show
-    render json: current_user.recipes.find(params[:id])
+    render json: @recipe
+    # render json: current_user.recipes.find(params[:id])
     # render json: Example.find(params[:id])
   end
 
