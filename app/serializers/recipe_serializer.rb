@@ -4,9 +4,9 @@ class RecipeSerializer < ActiveModel::Serializer
   attributes :id, :title, :ingredient_list, :directions, :prep_time, :editable,
             :picture
 
-  # def picture
-  #   object.picture.id
-  # end
+  def picture
+    object.id
+  end
 
   def editable
     scope == object.user

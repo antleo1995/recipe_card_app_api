@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   resources :recipes, except: [:new, :edit] do
     resources :pictures, only: [:index, :create]
   end
-  resources :pcitures, only: [:show, :update, :destroy]
+  resources :pictures, only: [:show, :update, :destroy]
 end
