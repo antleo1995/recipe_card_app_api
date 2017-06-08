@@ -2,10 +2,14 @@
 #
 class RecipeSerializer < ActiveModel::Serializer
   attributes :id, :title, :ingredient_list, :directions, :prep_time, :editable,
-            :picture
+             :picture
 
   def picture
-    object.id
+
+  if object.picture
+    object.picture.id
+  end
+
   end
 
   def editable
