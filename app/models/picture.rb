@@ -3,5 +3,5 @@
 class Picture < ApplicationRecord
   belongs_to :recipe
   validates :url, presence: true
-  validates :url, :uniqueness => { :scope => :recipe_id }
+  validates :recipe_id, :uniqueness => { :scope => :recipe_id }
 end

@@ -5,11 +5,9 @@ class RecipeSerializer < ActiveModel::Serializer
              :picture
 
   def picture
-
-  if object.picture
-    object.picture.id
-  end
-
+    if object.picture
+      object.picture.id
+    end
   end
 
   def editable
