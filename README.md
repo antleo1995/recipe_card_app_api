@@ -446,11 +446,17 @@ heroku run rake db:migrate db:seed db:examples
 Production URL:https://recipe-card-backend.herokuapp.com/
 
 Repo:https://github.com/antleo1995/recipe_card_app_api
+Ember repo: https://github.com/antleo1995/ember-recipe-app
+
+
+
+Back end deployed: https://recipe-card-backend.herokuapp.com/
 
 ## Production info for client
 
 Production URL:https://antleo1995.github.io/recipe_card_app/
-
+Ember deployed app: https://antleo1995.github.io/ember-recipe-app/
+Front end deployed: https://antleo1995.github.io/ember-recipe-app/
 Repo:https://github.com/antleo1995/recipe_card_app
 
 ## [License](LICENSE)
