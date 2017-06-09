@@ -14,7 +14,16 @@ with the client which is linked below.
 I would like to add more tables - giving me more functionality. The plan would be
 a many to many join table between recipes and ingredients as well as a CSV file
 to popluate the ingredients table. Perhaps there are some third party APIs I can
-employ in the future as well as this may carry over to my capstone project. 
+employ in the future as well as this may carry over to my capstone project.
+
+After Capsstone:
+
+I have added a new table and new relations. I need to document this information.
+
+For now be aware there is a new table called pictures that needs to be documented.
+
+It has a restful convention and uses recipe_id as a foreign key to associate to its
+respective recipe.
 
 ## Structure
 
@@ -254,6 +263,7 @@ Content-Type: application/json; charset=utf-8
 | GET    | `/recipes/:id`         | `show`            |
 | PATCH  | `/recipes/:id`         | `update`          |
 | DELETE | `/recipes/:id`         | `destroy`         |
+
 
 ### Post /recipes
 
